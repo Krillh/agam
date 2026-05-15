@@ -1,8 +1,21 @@
 
 pub mod file_paths {
 
-    pub const MOD_FOLDER: &str = "";
+    pub const ASSETS_FOLDER: &str = "assets";
+    
+    pub const APP_DATA_FOLDER: &str = "appdata";
+    pub mod app_data_paths {
+        pub const PROFILES: &str = "profiles";
+    }
+    
+    pub const PROFILE_DATA_FOLDER: &str = "profile_data";
+    pub mod profile_data_paths {
+        pub const WORLD_SAVES: &str = "worlds";
+        
+        pub const SETTINGS: &str = "settings.ron";
+    }
 
+    pub const MOD_FOLDER: &str = "mods";
     pub mod mod_file_paths {
         pub const BLOCK_TEXTURES: &str = "textures/blocks";
         pub const ITEM_TEXTURES: &str = "textures/items";

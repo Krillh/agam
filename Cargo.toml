@@ -4,3 +4,29 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# Bevy-specific ecosystem
+bevy = { version = "0.18.1", features = ["debug"] }
+bevy_asset_loader = "0.26.0"
+bevy_enhanced_input = "0.24.4"
+chunky-bevy = "0.18.0"
+
+serde = { version = "1.0.228", features = ["derive"] }
+serde_with = "3.20.0"
+toml = "1.1.2+spec-1.1.0"
+ron = "0.12.1"
+regex = "1.12.3"
+
+thiserror = "2.0.18"
+
+tinystr = "0.8.3"
+# const_format = "0.2.36"
+
+
+# Only a small amount of optimization for dev builds
+[profile.dev]
+opt-level = 1
+
+# A large amount of optimization for packages so things like
+# rendering don't slow us down.
+[profile.dev.package."*"] # 
+opt-level = 3
